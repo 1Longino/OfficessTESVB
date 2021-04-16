@@ -7,12 +7,12 @@
     </div>
     <div class="row">
         <div class="col-4 offset-4">
-            <form method="post" action="{{route("origenes.update",$origen->id_origen)}}">
+            <form method="post" action="{{route("origenes.update",$origene->id_origen)}}">
                 @csrf
                 @method("PUT")
                 <div class="form-group">
                     <label for="descripcion">Reemplazar por:</label>
-                    <input type="text"  value="{{$origen->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="origen">
+                    <input type="text"  value="{{$origene->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="origen">
                 </div>
 
                 <button type="submit" class="btn-primary">Modificar</button>

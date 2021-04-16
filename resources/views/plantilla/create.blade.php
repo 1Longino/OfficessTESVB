@@ -1,51 +1,44 @@
 @extends('layout.layout')
-@section('title','Añadir Personal')
+@section('title', 'Plantillas')
+
 @section('content')
 
-    <h1 class=" text-white text-center">Agregar a Plantilla</h1>
+    <br>
+    <h1 class="bg-success text-white text-left">Asignar personal a plantilla</h1>
     <div class="row">
-        <div>
-            <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("plantillas")}}">Regresar</a></button>
-        </div>
+        <div class="form-group col-4"><a class="btn-success" href="{{url("plantillas")}}">Volver  <i class="fas fa-reply"></i></a></div>
     </div>
-    <div class="row">
-        <div class="col-4 offset-4">
-            <form method="post" action="{{url("plantillas")}}">
+    <br>
+    <form method="post" action="{{url("plantillas")}}">
+        @csrf
 
-                @csrf
-                <div class="form-group">
+            <div class="form-group col-3">
+                <label for="id_personal">Jefe de Area</label>
+                <br>
+                <select name="id_personal" id="">
+                    <option value="">Selecciona una opción</option>
+                    @foreach($personales as $personal)
+                        <option value="{{$personal->id_personal}}">{{$personal->nombre}}</option>                                                                                                                                                                                                                                               es->nombre}}</option>
+                    @endforeach
+                </select>
+            </div>
 
-                    <div>
-                        <div class="col-lg-4"></div>
-                        <div class="col-lg-4">
-                            <label for="nombre">Jefe</label>
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre">
-                        </div>
-                    </div>
-                    <br>
-                    <br>
+            <div class="form-group col-3">
+                <label for="id_subordinado"> Personal comisionado</label>
+                <br>
+                <select name="id_subordinado" id="">
+                    <option value="">Selecciona una opcion</option>
+                    @foreach($personales as $personal)
+                        <option value="{{$personal->id_personal}}">{{$personal->nombre}}</option>
+                    @endforeach
+                </select>
+            </div>
 
-
-                    <div class="col-lg-12">
-                        <br>
-                        <div class="col-lg-4"></div>
-
-                        <div class="col-lg-4">
-                            <label class="col-lg-4" for="exampleInputPassword1">Subordinado</label>
-                            <select class="col-lg-7" name="id_profesion" id="">
-                                @foreach($plantillas as $plantilla)
-
-                                    <option value="{{$plantilla->id_profesion}}">{{$plantilla->descripcion}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-
-                    <!--<input type="checkbox" value="hola" name="check">activame-->
-                </div>
-                <center><button type="submit" class="btn btn-primary">Agregar a Plantilla</button></center>
-            </form>
         </div>
-    </div>
+        <br>
+        <center> <button type="submit" class="btn-success">Aceptar   <i class="fas fa-check-circle"></i></button></center>
+    </form>
+    <br>
 
 @endsection
+

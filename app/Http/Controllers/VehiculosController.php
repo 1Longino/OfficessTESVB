@@ -65,7 +65,7 @@ class VehiculosController extends Controller
      * @param  \App\Vehiculos  $vehiculos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vehiculos $vehiculos)
+    public function edit(Vehiculos $vehiculo)
     {
         //
         $marcas = Marcas::all();

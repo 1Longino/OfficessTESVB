@@ -1,43 +1,51 @@
-@extends('layout.layout')
-@section('title','Personal')
+@extends ('layout.layout')
+@section('title', 'Generar Plantilla')
 @section('content')
-    <h1 class=" text-white text-center">Plantilla</h1>
+
+    <br>
+    <h1 class="text-center bg-success text-white">Generar Plantilla</h1>
     <div class="row">
-        <div>
-            <button type="submit" class="btn-primary"><a class="btn-primary" href="{{url("plantillas/create")}}">Agregar Subordinado</a></button>
-        </div>
+        <div class="col"><a class="btn btn-outline-success" href="{{url("plantillas/create")}}"><i class="fas fa-plus-circle"></i></a></div>
     </div>
-    <div class="row">
+    <br>
+
+    <div class=="row">
+
         <div class="col">
             <table class="table">
                 <thead>
 
-                <th>Jefe</th>
+                <th>Jefe de Area</th>
                 <th>Subordinado</th>
+
                 </thead>
-                <tbody>
+                <tbdoy>
+                    @foreach($plantillas as $plantilla)
+                        <tr>
 
-                @foreach($plantillas as $plantilla)
-                    <tr>
-                        <td>{{$plantilla->jefe}}</td>
-                        <td>{{$plantilla->id_subordinado}}</td>
+                            <td>{{isset($plantilla->getPersonal[0])?$plantilla->getPersonal[0]->nombre:""}}</td>
+                            <td>{{isset($plantilla->getPersonal[0])?$plantilla->getPersonal[0]->nombre:""}}</td>
+                            <td>
 
-                        <td>{{isset($plantilla->getPlantilla[0])?$plantilla->getPlantilla[0]->id_subordinado:""}}</td>
 
-                        <td>
-                            <form action="{{url("")."/".$plantilla->id_JefesPersonales}}" method="post">
-                                @csrf
-                                @method("DELETE")
-                                <button href="" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+                                <form action="{{url("plantillas")."/".$plantilla->id_unidad_personal}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button href="" class="btn btn-outline-danger" name="eliminar"><i class="fas fa-trash"></i></button>
 
-                            </form>
-                        </td>
 
-                    </tr>
-                @endforeach
-                </tbody>
+                                </form>
+
+                            </td>
+
+
+
+                        </tr>
+                    @endforeach
+                </tbdoy>
             </table>
         </div>
     </div>
+
 
 @endsection

@@ -7,12 +7,12 @@
     </div>
     <div class="row">
         <div class="col-4 offset-4">
-            <form method="post" action="{{route("profesiones.update",$profesion->id_profesion)}}">
+            <form method="post" action="{{route("profesiones.update",$profesione->id_profesion)}}">
                 @csrf
                 @method("PUT")
                 <div class="form-group">
                     <label for="descripcion">Nombre profesion</label>
-                    <input type="text"  value="{{$profesion->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="Profesion">
+                    <input type="text"  value="{{$profesione->descripcion}}" id="descripcion" class="form-control" name="descripcion" placeholder="Profesion">
                 </div>
 
                 <button type="submit" class="btn-primary">Aceptar</button>

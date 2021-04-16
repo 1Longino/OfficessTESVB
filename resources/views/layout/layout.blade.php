@@ -60,7 +60,8 @@
                 <li><a href="vehiculos">Vehiculos</a></li>
                 <li><a href="personales">Personal</a></li>
                 <li class="nav-item"><a href="{{url("plantillas")}}" class="nav-link text-white">Plantilla</a></li>
-                <li class="nav-item"><a href="{{url("oficios")}}" class="nav-link text-white">Generar Oficios</a></li>
+                <li class="nav-item"><a href="{{url("ocviaticos")}}" class="nav-link text-white">Generar Oficios</a></li>
+                <li class="nav-item"><a href="{{url("administrativas")}}" class="nav-link text-white">Departamentos</a></li>
             </ul>
         </nav>
     </div>

@@ -12,10 +12,10 @@
                 @method("PUT")
 
                 <div class="form-group">
-                    <label for="exampleInputPassword2">Modelo</label>
+                    <label for="modelo">Modelo</label>
                     <input type="text" class="form-control" name="modelo" value="{{$vehiculo->modelo}}" placeholder="Modelo">
 
-
+                    <label for="id_marca">Marca</label>
                     <select name="id_marca" id="">
                         <option value="">Selecciona una opcion</option>
                         @foreach($marcas as $marca)
@@ -23,11 +23,9 @@
                         @endforeach
                     </select>
 
-                    <label for="exampleInputPassword2">Placas</label>
+                    <label for="placas">Placas</label>
                     <input type="text" class="form-control" name="placas" value="{{$vehiculo->placas}}"placeholder="Placas">
 
-                    <label for="exampleInputPassword3">Estado</label>
-                    <input type="text" class="form-control" name="estado" value="{{$vehiculo->estado}}"placeholder="Estado">
 
 
 

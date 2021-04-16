@@ -62,7 +62,7 @@ class PersonalesController extends Controller
      * @param  \App\Personales  $personales
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personales $personales)
+    public function edit(Personales $profesiones)
     {
         //
         $profesiones = Profesiones::all();

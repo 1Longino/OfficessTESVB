@@ -63,10 +63,10 @@ class OrigenesController extends Controller
      * @param  \App\Origenes  $origenes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Origenes $origen)
+    public function edit(Origenes $origene)
     {
         //
-        return view("origenes.edit",compact('origen'));
+        return view("origenes.edit",compact('origene'));
     }
 
     /**
@@ -76,10 +76,10 @@ class OrigenesController extends Controller
      * @param  \App\Origenes  $origenes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Origenes $origen)
+    public function update(Request $request, Origenes $origene)
     {
         //
-        $origen->update($request->all());
+        $origene->update($request->all());
         return redirect("origenes");
 
     }
